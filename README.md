@@ -26,7 +26,3 @@ enough for educational purposes.
   - Update README. Add formal sections.
 - 29.03.2022 - 0
   - Initial
-
-## Design notes
-
-- ...
