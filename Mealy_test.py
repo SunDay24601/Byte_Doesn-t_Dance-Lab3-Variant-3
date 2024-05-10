@@ -52,13 +52,10 @@ class TestMealyFSM(unittest.TestCase):
             (12, 1),
             (13, 0),
             (14, 1),
-            (15, 0)
+            (15, 0),
         ]
 
-        expected_output_sequence = [
-            (6, "Succeed"),
-            (15, "Succeed")
-        ]
+        expected_output_sequence = [(6, "Succeed"), (15, "Succeed")]
 
         fsm.execute(input_sequence)
 
