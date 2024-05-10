@@ -47,7 +47,11 @@ class TestMealyFSM(unittest.TestCase):
         fsm.add_node("S0", {}, {})
 
         input_sequence = [(-1, 0), (-2, 1), (-3, 0)]
-        expected_state_sequence = [(-1, "S0"), (-2, "S0"), (-3, "S0")]  # FSM doesn't process the Time logic
+        expected_state_sequence = [
+            (-1, "S0"),
+            (-2, "S0"),
+            (-3, "S0"),
+        ]  # FSM doesn't process the Time logic
         expected_output_sequence: List[Tuple[int, Optional[str]]] = []
 
         fsm.execute(input_sequence)
