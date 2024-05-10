@@ -19,6 +19,8 @@ Introduction needs to be done here
 
 - 09.05.2024
 - Basic Implementation.
+- 10.05.2024
+- Basic Task.
 
 ## Design notes
 
