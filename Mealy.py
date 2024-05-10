@@ -6,11 +6,11 @@ class Node:
         self,
         name: str,
         transition_rules: Dict[int, str],
-        output_mapping: Dict[int, str],
+        output_mapping: Dict[int, Optional[str]],
     ) -> None:
         self.name: str = name
         self.transition_rules: Dict[int, str] = transition_rules
-        self.output_mapping: Dict[int, str] = output_mapping
+        self.output_mapping: Dict[int, Optional[str]] = output_mapping
 
     def activate(self, input_tuple: Tuple[int, Any]) -> Tuple[str, Optional[str]]:
         time, input_value = input_tuple
@@ -33,7 +33,7 @@ class MealyFSM:
         self,
         node_name: str,
         transition_rules: Dict[int, str],
-        output_mapping: Dict[int, str],
+        output_mapping: Dict[int, Optional[str]],
     ) -> None:
         node: Node = Node(node_name, transition_rules, output_mapping)
         self.nodes[node_name] = node
