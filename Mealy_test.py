@@ -1,4 +1,5 @@
 import unittest
+from typing import Dict, Any, List, Optional, Tuple
 from Mealy import MealyFSM
 
 
@@ -28,7 +29,33 @@ class TestMealyFSM(unittest.TestCase):
         self.assertEqual(fsm.state_seq, expected_state_sequence)
         self.assertEqual(fsm.output_seq, expected_output_sequence)
 
-    def test_sequence_detector(self) -> None:  # to detect 11010
+    def test_empty_input_sequence(self) -> None:
+        fsm = MealyFSM(initial_state="S0")
+        fsm.add_node("S0", {}, {})
+
+        input_sequence: List[Tuple[int, int]] = []
+        expected_state_sequence: List[Tuple[int, Optional[str]]] = []  # expect nothing
+        expected_output_sequence: List[Tuple[int, Optional[str]]] = []  # expect nothing
+
+        fsm.execute(input_sequence)
+
+        self.assertEqual(fsm.state_seq, expected_state_sequence)
+        self.assertEqual(fsm.output_seq, expected_output_sequence)
+
+    def test_negative_timestamp(self) -> None:
+        fsm = MealyFSM(initial_state="S0")
+        fsm.add_node("S0", {}, {})
+
+        input_sequence = [(-1, 0), (-2, 1), (-3, 0)]
+        expected_state_sequence = [(-1, "S0"), (-2, "S0"), (-3, "S0")]  # FSM doesn't process the Time logic
+        expected_output_sequence: List[Tuple[int, Optional[str]]] = []
+
+        fsm.execute(input_sequence)
+
+        self.assertEqual(fsm.state_seq, expected_state_sequence)
+        self.assertEqual(fsm.output_seq, expected_output_sequence)
+
+    def test_complex_sequence_detector(self) -> None:  # to detect 11010
         fsm = MealyFSM(initial_state="S")
         fsm.add_node("S", {1: "S1", 0: "S"}, {1: None, 0: None})
         fsm.add_node("S1", {1: "S11", 0: "S"}, {1: None, 0: None})
