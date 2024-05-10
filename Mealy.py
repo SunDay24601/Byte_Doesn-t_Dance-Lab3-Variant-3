@@ -47,4 +47,3 @@ class MealyFSM:
                 self.output_seq.append((input_tuple[0], output))
             self.current_state = next_state
         # self.state_seq.append((input_seq[-1][0], self.current_state))
-
