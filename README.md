@@ -1,28 +1,25 @@
-# GROUP-NAME - lab NUMBER - variant NUMBER
+# Byte Doesn't Dance - lab 1 - variant 1
 
-This is an example project which demonstrates project structure and necessary
-CI checks. It is not the best structure for real-world projects, but good
-enough for educational purposes.
+Introduction needs to be done here
 
 ## Project structure
 
-- `foo.py` -- implementation of `Foo` class with `hello` and `add` features.
-   Stateless.
-- `foo_test.py` -- unit and PBT tests for `Foo`.
-
-## Features
-
-- PBT: `test_add_commutative`
+- `Mealy.py` -- implementation of Mealy Finite State Machine and the node.
+- `Mealy_test.py` -- unit and PBT tests for `Mealy Finite State Machine`.
 
 ## Contribution
 
-- Aleksandr Penskoi (EMAIL) -- all work.
+- `Hu Jinghao` (1206041060@qq.com)
+- all work
+
+- `Meng Chenxu` (3183093110@qq.com)
+- all work
 
 ## Changelog
 
-- 29.03.2022 - 2
-  - Add test coverage.
-- 29.03.2022 - 1
-  - Update README. Add formal sections.
-- 29.03.2022 - 0
-  - Initial
+- 09.05.2024
+- Basic Implementation.
+
+## Design notes
+
+- need to be finish
