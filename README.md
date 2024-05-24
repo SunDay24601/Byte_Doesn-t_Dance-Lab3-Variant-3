@@ -11,9 +11,9 @@
 ## Features
 
 - Define Mealy finite state machines using an embedded domain-specific language.
-  Execute defined state machines with input sequences.
-  Visualize state machines as GraphViz DOT graphs.
-  Handle runtime errors and negative timestamps appropriately.
+- Execute defined state machines with input sequences.
+- Visualize state machines as GraphViz DOT graphs.
+- Handle runtime errors and negative timestamps appropriately.
 
 ## Project Structure
 
@@ -45,10 +45,8 @@
 ## Design Notes
 
 - The MealyFSM class maintains the current state of the machine, executes
-  transition  rules based on input sequences, and generates visual
+  transition rules based on input sequences, and generates visual
   representations of the state machine. 
 - The Node class represents individual states and manages transition rules
   and output mappings.  Input sequences are processed, and outputs are
   generated according to the rules defined in the state machine.
-
-
