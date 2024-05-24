@@ -24,6 +24,7 @@
 
 - **Hu Jinghao** (1206041060@qq.com)
   - All work
+
 - **Meng Chenxu** (3183093110@qq.com)
   - All work
 
@@ -31,10 +32,13 @@
 
 - **23.05.2024**
   - Visualize model.
+
 - **20.05.2024**
   - Check code style.
+
 - **18.05.2024**
   - Mealy_test.py.
+
 - **16.05.2024**
   - Mealy.py.
 
@@ -43,6 +47,7 @@
 - The MealyFSM class maintains the current state of the machine, executes
   transition rules based on input sequences, and generates visual
   representations of the state machine. 
+
 - The Node class represents individual states and manages transition rules
   and output mappings. Input sequences are processed, and outputs are
   generated according to the rules defined in the state machine.
