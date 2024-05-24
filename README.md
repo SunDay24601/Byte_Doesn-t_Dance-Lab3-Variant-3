@@ -48,5 +48,5 @@
   transition rules based on input sequences, and generates visual
   representations of the state machine. 
 - The Node class represents individual states and manages transition rules
-  and output mappings.  Input sequences are processed, and outputs are
+  and output mappings. Input sequences are processed, and outputs are
   generated according to the rules defined in the state machine.
