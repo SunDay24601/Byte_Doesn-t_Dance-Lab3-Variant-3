@@ -23,24 +23,24 @@
 ## Contribution
 
 - **Hu Jinghao** (1206041060@qq.com)
-  - All work
+- All work
   
 - **Meng Chenxu** (3183093110@qq.com)
-  - All work
+- All work
 
 ## Changelog
 
 - **23.05.2024**
-  - Visualize model.
+- Visualize model.
 
 - **20.05.2024**
-  - Check code style.
+- Check code style.
   
 - **18.05.2024**
-  - Mealy_test.py.
+- Mealy_test.py.
 
 - **16.05.2024**
-  - Mealy.py.
+- Mealy.py.
 
 ## Design Notes
 
