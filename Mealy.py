@@ -46,3 +46,22 @@ class MealyFSM:
             if output is not None:
                 self.output_seq.append((input_tuple[0], output))
             self.current_state = next_state
+
+    def generate_dot_graph(self) -> str:
+        dot_graph = "digraph MealyFSM {\n"
+        dot_graph += "    rankdir=LR;\n"
+        for node_name, node in self.nodes.items():
+            for input_value, next_state in node.transition_rules.items():
+                output = node.output_mapping.get(input_value)
+                dot_graph += f'    {node_name} -> {next_state} [label="{input_value} / {output}"];\n'
+        dot_graph += "}"
+        return dot_graph
+
+    def generate_state_table(self) -> str:
+        table = "| Current State | Input | Next State | Output |\n"
+        table += "|---------------|-------|------------|--------|\n"
+        for node_name, node in self.nodes.items():
+            for input_value, next_state in node.transition_rules.items():
+                output = node.output_mapping.get(input_value)
+                table += f"| {node_name} | {input_value} | {next_state} | {output} |\n"
+        return table

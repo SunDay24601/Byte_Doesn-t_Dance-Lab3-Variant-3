@@ -91,3 +91,33 @@ class TestMealyFSM(unittest.TestCase):
         fsm.execute(input_sequence)
 
         self.assertEqual(fsm.output_seq, expected_output_sequence)
+
+    def test_dot_graph_generation(self) -> None:
+        fsm = MealyFSM(initial_state="S0")
+        fsm.add_node("S0", {1: "S1", 0: "S0"}, {1: "Output_A", 0: "Output_B"})
+        fsm.add_node("S1", {1: "S1", 0: "S0"}, {1: "Output_C", 0: "Output_D"})
+
+        expected_dot_graph = """digraph MealyFSM {
+    rankdir=LR;
+    S0 -> S1 [label="1 / Output_A"];
+    S0 -> S0 [label="0 / Output_B"];
+    S1 -> S1 [label="1 / Output_C"];
+    S1 -> S0 [label="0 / Output_D"];
+}"""
+        generated_dot_graph = fsm.generate_dot_graph()
+        self.assertEqual(generated_dot_graph, expected_dot_graph)
+
+    def test_state_table_generation(self) -> None:
+        fsm = MealyFSM(initial_state="S0")
+        fsm.add_node("S0", {1: "S1", 0: "S0"}, {1: "Output_A", 0: "Output_B"})
+        fsm.add_node("S1", {1: "S1", 0: "S0"}, {1: "Output_C", 0: "Output_D"})
+
+        expected_state_table = """| Current State | Input | Next State | Output |
+|---------------|-------|------------|--------|
+| S0 | 1 | S1 | Output_A |
+| S0 | 0 | S0 | Output_B |
+| S1 | 1 | S1 | Output_C |
+| S1 | 0 | S0 | Output_D |
+"""
+        generated_state_table = fsm.generate_state_table()
+        self.assertEqual(generated_state_table, expected_state_table)
