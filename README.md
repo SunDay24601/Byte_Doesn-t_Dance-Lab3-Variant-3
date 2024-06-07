@@ -45,3 +45,28 @@
 - The Node class represents individual states and manages transition rules
   and output mappings. Input sequences are processed, and outputs are
   generated according to the rules defined in the state machine.
+
+## Visualization 
+
+- (example)
+
+| Current State | Input | Next State | Output   |
+|---------------|-------|------------|----------|
+| S0            | 1     | S1         | Output_A |
+| S0            | 0     | S0         | Output_B |
+| S1            | 1     | S1         | Output_C |
+| S1            | 0     | S0         | Output_D |
+
+
+- Sequence Detector
+
+| Current State | Input | Next State | Output  |
+|---------------|-------|------------|---------|
+| S0            | 1     | S1         | -       |
+| S0            | 0     | S0         | -       |
+| S1            | 1     | S11        | -       |
+| S11           | 0     | S0         | -       |
+| S110          | 1     | S11        | -       |
+| S110          | 0     | S110       | -       |
+| S1101         | 1     | S11        | -       |
+| S1101         | 0     | S0         | Succeed |
