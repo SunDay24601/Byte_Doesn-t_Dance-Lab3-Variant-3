@@ -46,9 +46,8 @@
   and output mappings. Input sequences are processed, and outputs are
   generated according to the rules defined in the state machine.
 
-## Visualization 
-
-- (example)
+## Visualization
+- example
 
 | Current State | Input | Next State | Output   |
 |---------------|-------|------------|----------|
@@ -56,7 +55,6 @@
 | S0            | 0     | S0         | Output_B |
 | S1            | 1     | S1         | Output_C |
 | S1            | 0     | S0         | Output_D |
-
 
 - Sequence Detector
 
