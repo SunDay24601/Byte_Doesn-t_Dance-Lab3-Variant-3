@@ -47,6 +47,7 @@
   generated according to the rules defined in the state machine.
 
 ## Visualization
+
 - example
 
 | Current State | Input | Next State | Output   |
